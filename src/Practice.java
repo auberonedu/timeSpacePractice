@@ -49,7 +49,7 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
+   * Time Complexity: O(n)
    * Space Complexity: 
    * 
    * @param nums An array of integers
@@ -58,6 +58,16 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
+
+    Map<Integer, Integer> frequentNums = new HashMap<>();
+
+    int mostCommon = nums[0];
+    int mostFrequent = 0;
+
+   for(int number : nums) {
+      
+   }
+
     return -1;
   }
 
