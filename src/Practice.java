@@ -85,7 +85,11 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
     int maxCount = 0;
-    int mostCommon = num[0];
+    int mostCommon = nums[0];
+
+    for (int i = 0; i < nums.length; i++) {
+      int count = 0;
+    }
     return -1;
   }
 }
