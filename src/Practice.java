@@ -60,13 +60,16 @@ public class Practice {
     // in O(n) time. n = nums.size()
     Map<Integer, Integer> frequentNums = new HashMap<>();
 
+    // initialize variables
     int mostCommon = nums[0];
     int mostFrequent = 0;
 
+    // for-loop iterating through the nums array and populate the HashMap
     for (int number : nums) {
       int currentFrequency = frequentNums.getOrDefault(number, 0) + 1;
       frequentNums.put(number, currentFrequency);
 
+      // Find the most frequent number in the array
       if (currentFrequency > mostFrequent) {
         mostCommon = number;
         mostFrequent = currentFrequency;
@@ -91,24 +94,24 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
+    // DONE: Complete this method with an implementation that runs
     // in O(1) space.
 
-    //initialize variables
+    // Initialize variables
     int mostCommon = nums[0];
     int count = 1;
 
-    //for-loop iterating through the nums array
+    // for-loop iterating through the nums array
     for (int i = 0; i < nums.length; i++) {
       
-      //Check if this number is the most common, otherwise move to next
+      // Check if this number is the most common, otherwise move to next
       if (nums[i] == mostCommon) {
             count++;
         } else {
           count--;
         }
       
-      //most to next number 
+      // Move to next number 
         if (count == 0) {
           mostCommon = nums[i];
           count = 1;
