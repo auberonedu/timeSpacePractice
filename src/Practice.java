@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
     for (int num : array) {
@@ -17,8 +17,8 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
@@ -49,16 +49,33 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
    */
   public static int mostCommonTimeEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
+    // DONE: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    Map<Integer, Integer> frequentNums = new HashMap<>();
+
+    // initialize variables
+    int mostCommon = nums[0];
+    int mostFrequent = 0;
+
+    // for-loop iterating through the nums array and populate the HashMap
+    for (int number : nums) {
+      int currentFrequency = frequentNums.getOrDefault(number, 0) + 1;
+      frequentNums.put(number, currentFrequency);
+
+      // Find the most frequent number in the array
+      if (currentFrequency > mostFrequent) {
+        mostCommon = number;
+        mostFrequent = currentFrequency;
+      }
+    }
+    return mostCommon;
   }
 
   /**
@@ -70,15 +87,36 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
+    // DONE: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+
+    // Initialize variables
+    int mostCommon = nums[0];
+    int count = 1;
+
+    // for-loop iterating through the nums array
+    for (int i = 0; i < nums.length; i++) {
+      
+      // Check if this number is the most common, otherwise move to next
+      if (nums[i] == mostCommon) {
+            count++;
+        } else {
+          count--;
+        }
+      
+      // Move to next number 
+        if (count == 0) {
+          mostCommon = nums[i];
+          count = 1;
+        }
+    }
+    return mostCommon;
   }
 }
