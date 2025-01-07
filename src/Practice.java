@@ -26,7 +26,6 @@ public class Practice {
     }
     return sum;
   }
-  
 
   // Time Complexity: O(n)
   // Space Complexity: O(n)
@@ -57,9 +56,28 @@ public class Practice {
    */
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
-    
+    HashMap<Integer, Integer> map = new HashMap<>();
+
+    for (int element : nums) {
+      if (map.containsKey(element)) {
+        map.put(element, map.get(element) + 1);
+      } else {
+        map.put(element, 1);
+      }
+    }
+
+    int majority = 0;
+    int max = 0;
+
+    for (int element : map.keySet()) {
+      if (map.get(element) > max) {
+        max = map.get(element);
+        majority = element;
+      }
+    }
+
+    return majority;
     // in O(n) time. n = nums.size()
-    return -1;
   }
 
   /**
@@ -71,8 +89,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity:
+   * Space Complexity:
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
