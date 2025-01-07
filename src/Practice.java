@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +59,19 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    int count = nums.length/2;
+    Map<Integer, Integer> numCount = new HashMap<>();
+    for (int num: nums) {
+      numCount.put(num, numCount.getOrDefault(num, 0) + 1);
+    }
+
+    for (Map.Entry<Integer, Integer> entry : numCount.entrySet()) {
+      if (entry.getValue() > count) {
+          return entry.getKey();
+      }
+    }
+    return -1; // if fails will show this
+    
   }
 
   /**
@@ -79,6 +92,9 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    Arrays.sort(nums);
+    int n = nums.length;
+    return nums[n/2];
+
   }
 }
