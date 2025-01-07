@@ -94,7 +94,7 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
+    // Complete this method with an implementation that runs
     // in O(1) space.
     int mostFreqCount = 0;
     int mostFreqInt = nums[0];

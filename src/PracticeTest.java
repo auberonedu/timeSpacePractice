@@ -8,4 +8,11 @@ public class PracticeTest {
 
   // Hints: They are static methods, so you will use the full Practice.mostCommonTimeEfficient for method calls
   // Forgot how to do unit tests? Look back at the ramblebot tests or old slides for a refresher!
+
+  @Test
+  void testMostCommonTimeEfficient() {
+    int[] test = {1, 2, 2, 3, 4};
+
+    assertEquals(2, Practice.mostCommonSpaceEfficient(test));
+  }
 }
