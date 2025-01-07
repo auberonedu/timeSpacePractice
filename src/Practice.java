@@ -1,12 +1,12 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
     for (int num : array) {
