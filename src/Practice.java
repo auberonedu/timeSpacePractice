@@ -58,11 +58,9 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    Map<Integer, Integer> frequencyMap = new HashMap<>();
-    
+    HashMap<Integer, Integer> frequencyMap = new HashMap<>();
     for (int num : nums) {
       frequencyMap.put(num, frequencyMap.getOrDefault(0, num) + 1);
-
     }
 
     return -1;
@@ -86,6 +84,8 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
+    int maxCount = 0;
+    int mostCommon = num[0];
     return -1;
   }
 }
