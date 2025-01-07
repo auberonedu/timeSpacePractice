@@ -50,8 +50,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -70,8 +70,7 @@ public class Practice {
           return entry.getKey();
       }
     }
-    return -1; // if fails will show this
-    
+    return -1; // if fails will show this 
   }
 
   /**
@@ -83,8 +82,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity:
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -95,6 +94,5 @@ public class Practice {
     Arrays.sort(nums);
     int n = nums.length;
     return nums[n/2];
-
   }
 }
