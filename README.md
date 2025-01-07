@@ -1,4 +1,4 @@
-# timeSpacePractice
+# timeSpacePractice (Alston and Tyler)
 
 Work with a partner for this exercise. Have one partner fork the repo and invite the other partner as a collaborator. Both clone, and follow the git cycle of pulling and pushing.
 
