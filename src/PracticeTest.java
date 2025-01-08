@@ -64,4 +64,22 @@ public class PracticeTest {
     int commonNum = Practice.mostCommonSpaceEfficient(nums);
     assertEquals(9, commonNum);
   }
+
+  @Test
+  void testMostCommonTimeEfficientNoElements() {
+    int[] nums = {};
+    // Uses a lambda expression to wrap the method call to be tested
+    assertThrows(IllegalArgumentException.class, () -> {
+      Practice.mostCommonTimeEfficient(nums);
+    });
+  }
+
+  @Test
+  void testMostCommonSpaceEfficientNoElements() {
+    int[] nums = {};
+    // Uses a lambda expression to wrap the method call to be tested
+    assertThrows(IllegalArgumentException.class, () -> {
+      Practice.mostCommonSpaceEfficient(nums);
+    });
+  }
 }
