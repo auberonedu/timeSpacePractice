@@ -60,17 +60,22 @@ public class Practice {
 
     HashMap<Integer, Integer> frequencies = new HashMap<>();
     int highestCount = 0;
+    int mostCommon = 0;
     for (int i = 0; i < nums.length; i++){
       if (frequencies.containsKey(nums[i])){
         int count = frequencies.get(nums[i]);
-        frequencies.put(nums[i], count ++);
-
+        count++;
+        frequencies.put(nums[i], count);
       } else {
         frequencies.put(nums[i], 1);
       }
+      if (frequencies.get(nums[i]) >= highestCount){
+        highestCount = frequencies.get(nums[i]);
+        mostCommon = nums[i];
+      }
     }
     
-    return -1;
+    return mostCommon;
   }
 
   /**
