@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:n(n^2)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
@@ -17,7 +17,7 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity: O(n^2)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n) 
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
@@ -58,7 +58,20 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    int highestValue = 0;
+    Map <Integer, Integer> mostCommon = new HashMap<Integer, Integer>();
+    for (int i : nums) {
+      if(mostCommon.containsKey(i)){
+        mostCommon.put(i, mostCommon.get(i) + 1);
+        if(highestValue < mostCommon.get(i)){
+          highestValue = mostCommon.get(i);
+        }
+      }
+      else{
+        mostCommon.put(i, 0);
+      }
+    }
+    return highestValue;
   }
 
   /**
