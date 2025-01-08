@@ -50,4 +50,18 @@ public class PracticeTest {
     int commonNum = Practice.mostCommonTimeEfficient(nums);
     assertEquals(9, commonNum);
   }
+
+  @Test
+  void testMostCommonTimeEfficientSameElements() {
+    int[] nums = {9, 9, 9, 9};
+    int commonNum = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(9, commonNum);
+  }
+
+  @Test
+  void testMostCommonSpaceEfficientSameElements() {
+    int[] nums = {9, 9, 9, 9};
+    int commonNum = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(9, commonNum);
+  }
 }
