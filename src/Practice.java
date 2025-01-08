@@ -63,9 +63,11 @@ public class Practice {
     for (int i : nums) {
       if(mostCommon.containsKey(i)){
         mostCommon.put(i, mostCommon.get(i) + 1);
+
         if(highestValue < mostCommon.get(i)){
-          highestValue = mostCommon.get(i);
+          highestValue = i;
         }
+
       }
       else{
         mostCommon.put(i, 0);
