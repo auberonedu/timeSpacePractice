@@ -95,7 +95,13 @@ public class Practice {
           count++;
         }
       }
+
+      if (count > maxCount) {
+        maxCount = count;
+        mostCommon = nums[i];
+      }
     }
-    return -1;
+
+    return mostCommon;
   }
 }
