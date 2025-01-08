@@ -106,21 +106,28 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    
     if (nums.length == 0) {
       throw new IllegalArgumentException("Input array must not be empty!");
     }
-
-    int spaceKey = nums[0];
-    int count = 0;
-    
-    for (int num : nums){
-      if (count == 0){
-        spaceKey = num;
+    //Intitialize the variables
+    int mostCommon = nums[0];
+    int count = 1;
+   //for loop iterating through array 
+    for (int i = 1; i < nums.length; i++){
+      if (nums[i] == mostCommon){
+        //if match is found increase count
+        count++; 
+        //if no match move on to another
+      } else { 
+        if (count > 0) {
+          //decrease count if that number is different
+          count--; 
+        } else {
+          mostCommon = nums[i]; 
+          count = 1; 
+        }
       }
-      count += (num == spaceKey) ? 1 : -1;
     }
-
-    return spaceKey;
+    return mostCommon; 
   }
 }
