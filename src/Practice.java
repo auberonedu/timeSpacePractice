@@ -49,8 +49,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -60,14 +60,24 @@ public class Practice {
     // in O(n) time. n = nums.size()
     Map<Integer, Integer> map = new HashMap<>();
 
-  for(int i = 0; i <= nums.length; i++){
-    if(map.containsKey(nums[i])){
-      map.put(nums[i], map.get(nums[i]) + 1);
-    } else{
-      map.put(nums[i], 1);
+    for(int i = 0; i < nums.length; i++){
+      if(map.containsKey(nums[i])){
+        map.put(nums[i], map.get(nums[i]) + 1);
+      } else{
+        map.put(nums[i], 1);
+      }
     }
-  }
-  return -1;
+    int mostCommon = nums[0];
+    int maxCount = 0;
+
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        if (entry.getValue() > maxCount) {
+            maxCount = entry.getValue();
+            mostCommon = entry.getKey();
+        }
+    }
+
+    return mostCommon;
   }
 
   /**
