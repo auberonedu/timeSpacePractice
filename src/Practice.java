@@ -87,7 +87,7 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: O(n)
+   * Time Complexity: O(n^2)
    * Space Complexity: O(1)
    * 
    * @param nums An array of integers
