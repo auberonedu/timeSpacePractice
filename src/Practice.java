@@ -59,6 +59,10 @@ public class Practice {
     // Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
 
+    if (nums.length == 0){
+      return 0;
+    }
+
     Map<Integer, Integer> freq = new HashMap<>();
 
     for (Integer num : nums) {
@@ -99,6 +103,10 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // Complete this method with an implementation that runs
     // in O(1) space.
+    if (nums.length == 0){
+      return 0;
+    }
+
     int mostFreqCount = 0;
     int mostFreqInt = nums[0];
 
