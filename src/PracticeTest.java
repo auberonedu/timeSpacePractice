@@ -10,7 +10,6 @@ public class PracticeTest {
   // Forgot how to do unit tests? Look back at the ramblebot tests or old slides for a refresher!
 }
 
-
 @Test
 public void testMostCommonTimeEfficient() {
   // Basic cases
@@ -28,4 +27,12 @@ public void testMostCommonTimeEfficient() {
   assertThrows(IllegalArgumentException.class, () -> {
     Practice.mostCommonTimeEfficient(new int[]{});
   });
+
+  @Test
+  public void testMostCommonSpaceEfficient(){
+    //Basic Case
+    assertEquals(5, Practice.mostCommonSpaceEfficient(new int[]{1, 2, 5, 3}));
+    //Case where one element is more common/frequent
+    assertEquals(2, Practice.mostCommonSpaceEfficient(new int[]{4, 2, 5, 3, 6, 2}));
+  }
 }
