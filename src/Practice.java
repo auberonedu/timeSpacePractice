@@ -49,16 +49,43 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
+   * @throws IllegalArgumentException if input array empty
    */
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+
+    // Handle empty array edge case
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Input array must not be empty!");
+    }
+
+    // Map to store frequency of each int
+    Map<Integer, Integer> numsMap = new HashMap<>();
+
+    // Populate frequency map
+    for (int number : nums) {
+      numsMap.put(number, numsMap.getOrDefault(number, 0) + 1);
+    }
+
+    // Variables to track most common key plus maxFreq
+    int vipKey = nums[0];
+    int maxFreq = 0;
+
+    // For-each loop to find most freq number
+    for (Map.Entry<Integer, Integer> entry : numsMap.entrySet()) {
+      if (entry.getValue() > maxFreq) {
+        vipKey = entry.getKey();
+        maxFreq = entry.getValue();
+      }
+    }
+
+    return vipKey;
   }
 
   /**
