@@ -69,13 +69,16 @@ public class Practice {
       }
     }
 
-    int highest = 0;
+    int highestVal = 0;
+    int highestKey = nums[0];
+
     for (Integer key : freq.keySet()) {
-      if (freq.get(key) > highest) {
-        highest = freq.get(key);
+      if (freq.get(key) > highestVal) {
+        highestVal = freq.get(key);
+        highestKey = key;
       }
     }
-    return highest;
+    return highestKey;
   }
 
   /**
