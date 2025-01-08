@@ -72,6 +72,8 @@ public class Practice {
       if (count > freqCount) {
         number = num;
         freqCount = count;
+      } else if (count == freqCount && num > number) {
+        number = num;
       }
     }
     // return most frequent number
@@ -96,21 +98,29 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    int number = 0;
-    int count = 0;
-    for (int i : nums) {
-      int currentNum = i;
-      int currentCount = 0;
-      for (int j = 1; j < nums.length; j++) {
-        if (currentNum == nums[j]) {
-          currentCount++;
+    if (nums.length == 0 || nums == null) {
+      throw new IllegalArgumentException("Array is null or empty");
+    } else if (nums.length == 1) {
+      return nums[0];
+    } else {
+      int number = 0;
+      int count = 0;
+      for (int i : nums) {
+        int currentNum = i;
+        int currentCount = 0;
+        for (int j = 0; j < nums.length; j++) {
+          if (currentNum == nums[j]) {
+            currentCount++;
+          }
+        }
+        if (currentCount > count) {
+          count = currentCount;
+          number = currentNum;
+        } else if (currentCount == count && currentNum > number) {
+          number = currentNum;
         }
       }
-      if (currentCount > count) {
-        count = currentCount;
-        number = currentNum;
-      }
+      return number;
     }
-    return number;
   }
 }
