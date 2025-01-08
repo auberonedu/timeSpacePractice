@@ -1,12 +1,12 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
     for (int num : array) {
@@ -17,8 +17,8 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(n)
+  // Space Complexity: O(n)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
@@ -49,16 +49,43 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
+   * @throws IllegalArgumentException if input array empty
    */
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+
+    // Handle empty array edge case
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Input array must not be empty!");
+    }
+
+    // Map to store frequency of each int
+    Map<Integer, Integer> numsMap = new HashMap<>();
+
+    // Populate frequency map
+    for (int number : nums) {
+      numsMap.put(number, numsMap.getOrDefault(number, 0) + 1);
+    }
+
+    // Variables to track most common key plus maxFreq
+    int vipKey = nums[0];
+    int maxFreq = 0;
+
+    // For-each loop to find most freq number
+    for (Map.Entry<Integer, Integer> entry : numsMap.entrySet()) {
+      if (entry.getValue() > maxFreq) {
+        vipKey = entry.getKey();
+        maxFreq = entry.getValue();
+      }
+    }
+
+    return vipKey;
   }
 
   /**
@@ -70,8 +97,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -79,6 +106,28 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Input array must not be empty!");
+    }
+    //Intitialize the variables
+    int mostCommon = nums[0];
+    int count = 1;
+   //for loop iterating through array 
+    for (int i = 1; i < nums.length; i++){
+      if (nums[i] == mostCommon){
+        //if match is found increase count
+        count++; 
+        //if no match move on to another
+      } else { 
+        if (count > 0) {
+          //decrease count if that number is different
+          count--; 
+        } else {
+          mostCommon = nums[i]; 
+          count = 1; 
+        }
+      }
+    }
+    return mostCommon; 
   }
 }
