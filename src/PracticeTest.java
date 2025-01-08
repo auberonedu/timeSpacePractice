@@ -33,9 +33,9 @@ public class PracticeTest {
   /* mostCommonSpaceEfficient */
   @Test
   void testMostCommonSpaceEfficient() {
-    int[] test1 = {1, 2, 2, 3, 4, 2};
+    int[] test = {1, 2, 2, 3, 4, 2};
 
-    assertEquals(2, Practice.mostCommonSpaceEfficient(test1));
+    assertEquals(2, Practice.mostCommonSpaceEfficient(test));
   }
 
   @Test
