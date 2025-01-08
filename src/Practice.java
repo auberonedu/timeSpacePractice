@@ -58,26 +58,29 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
+    if (nums.length == 0 || nums == null) {
+      throw new IllegalArgumentException("Array is null or empty");
+    } else {
+      // will hold number at first index and initiate count
+      int number = nums[0];
+      int freqCount = 0;
+      // stores numbers and frequencies in a hashmap
+      Map<Integer, Integer> numCount = new HashMap<>();
+      // iterate through and count, update number/count if one with more apperances is found
+      for (int num: nums) {
+        int count = numCount.getOrDefault(num, 0) + 1;
+        numCount.put(num, count);
 
-    // will hold number at first index and initiate count
-    int number = nums[0];
-    int freqCount = 0;
-    // stores numbers and frequencies in a hashmap
-    Map<Integer, Integer> numCount = new HashMap<>();
-    // iterate through and count, update number/count if one with more apperances is found
-    for (int num: nums) {
-      int count = numCount.getOrDefault(num, 0) + 1;
-      numCount.put(num, count);
-
-      if (count > freqCount) {
-        number = num;
-        freqCount = count;
-      } else if (count == freqCount && num > number) {
-        number = num;
+        if (count > freqCount) {
+          number = num;
+          freqCount = count;
+        }  else if (count == freqCount && num > number) {
+          number = num;
+        }
       }
+      // return most frequent number
+      return number; 
     }
-    // return most frequent number
-    return number; 
   }
 
   /**
