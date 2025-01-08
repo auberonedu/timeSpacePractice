@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,18 +58,24 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    int count = nums.length/2;
-    Map<Integer, Integer> numCount = new HashMap<>();
-    for (int num: nums) {
-      numCount.put(num, numCount.getOrDefault(num, 0) + 1);
-    }
 
-    for (Map.Entry<Integer, Integer> entry : numCount.entrySet()) {
-      if (entry.getValue() > count) {
-          return entry.getKey();
+    // will hold number at first index and initiate count
+    int number = nums[0];
+    int freqCount = 0;
+    // stores numbers and frequencies in a hashmap
+    Map<Integer, Integer> numCount = new HashMap<>();
+    // iterate through and count, update number/count if one with more apperances is found
+    for (int num: nums) {
+      int count = numCount.getOrDefault(num, 0) + 1;
+      numCount.put(num, count);
+
+      if (count > freqCount) {
+        number = num;
+        freqCount = count;
       }
     }
-    return -1; // if fails will show this 
+    // return most frequent number
+    return number; 
   }
 
   /**
@@ -82,7 +87,7 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity:
+   * Time Complexity: O(n)
    * Space Complexity: O(1)
    * 
    * @param nums An array of integers
@@ -91,8 +96,21 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    Arrays.sort(nums);
-    int n = nums.length;
-    return nums[n/2];
+    int number = 0;
+    int count = 0;
+    for (int i : nums) {
+      int currentNum = i;
+      int currentCount = 0;
+      for (int j = 1; j < nums.length; j++) {
+        if (currentNum == nums[j]) {
+          currentCount++;
+        }
+      }
+      if (currentCount > count) {
+        count = currentCount;
+        number = currentNum;
+      }
+    }
+    return number;
   }
 }
