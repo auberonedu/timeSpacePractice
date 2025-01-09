@@ -20,10 +20,10 @@ public class PracticeTest {
     numsTest[5] = 2;
 
     
-    int expected = 5;
+    
     int actual = Practice.mostCommonTimeEfficient(numsTest);
 
-    assertEquals(expected, actual, "This should produce 1");
+    assertEquals(2, actual);
   }
 
   @Test
