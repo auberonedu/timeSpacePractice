@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 
 public class Practice {
 
@@ -28,8 +26,7 @@ public class Practice {
   }
   
 
-  // Time Complexity: O(n)
-  // Space Complexity: o(n)
+ 
   // Time Complexity: O(n)
   // Space Complexity: O(n) 
   // Does the 'T' look confusing? Consider refreshing on generic methods
@@ -51,8 +48,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -87,8 +84,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity:  O(n)
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly

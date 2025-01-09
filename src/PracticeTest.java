@@ -32,7 +32,7 @@ public class PracticeTest {
 
     int howMany = Practice.mostCommonSpaceEfficient(numsTest);
 
-    assertEquals( howMany, howMany);
+    assertEquals( 2, howMany);
 
   }
 
