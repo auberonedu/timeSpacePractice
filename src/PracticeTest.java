@@ -16,5 +16,13 @@ public class PracticeTest {
       assertEquals(2, Practice.mostCommonTimeEfficient(new int[]{2, 2, 2, 3, 3}));
       assertEquals(4, Practice.mostCommonTimeEfficient(new int[]{4, 4, 4, 4}));
       assertEquals(0, Practice.mostCommonTimeEfficient(new int[]{0, 0, 1, 2, 3, 0, 4}));
+    } 
+
+    public void testMostCommonSpaceEfficient(){
+      assertEquals(3, Practice.mostCommonSpaceEfficient(new int[]{3, 3, 2, 1, 3}));
+      assertEquals(1, Practice.mostCommonSpaceEfficient(new int[]{1}));
+      assertEquals(2, Practice.mostCommonSpaceEfficient(new int[]{2, 2, 2, 3, 3}));
+      assertEquals(4, Practice.mostCommonSpaceEfficient(new int[]{4, 4, 4, 4}));
+      assertEquals(0, Practice.mostCommonSpaceEfficient(new int[]{0, 0, 1, 2, 3, 0, 4}));
     }
 }
