@@ -96,22 +96,28 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    int highestValue = 0;
+    int highestCommon = 0;
+    int mostFrequentNum = nums[0];;
+
     Map <Integer, Integer> mostCommon = new HashMap<Integer, Integer>();
     
-    for (int i : nums) {
-      if(mostCommon.containsKey(i)){
-        mostCommon.put(i, mostCommon.get(i) + 1);
-
-        if(highestValue < mostCommon.get(i)){
-          highestValue = i;
-        }
-
+    for (int num: nums) {
+      
+      if(mostCommon.containsKey(num)){
+        mostCommon.put(num, mostCommon.get(num) + 1);
+        
+      }else{
+        mostCommon.put(num, 0);
       }
-      else{
-        mostCommon.put(i, 0);
+
+      int count = mostCommon.get(num);
+      if( count >= highestCommon){
+        highestCommon = count;
+        mostFrequentNum = num;
       }
+
     }
-    return highestValue;
+    
+    return mostFrequentNum;
   }
 }

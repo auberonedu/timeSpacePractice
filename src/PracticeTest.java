@@ -26,4 +26,14 @@ public class PracticeTest {
     assertEquals(expected, actual, "This should produce 1");
   }
 
+  @Test
+  void testMostCommonSpaceEfficient(){
+    int[] numsTest = {1, 2, 3, 3, 4, 4, 2};
+
+    int howMany = Practice.mostCommonSpaceEfficient(numsTest);
+
+    assertEquals( howMany, howMany);
+
+  }
+
 }
