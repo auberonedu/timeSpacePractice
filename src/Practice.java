@@ -59,11 +59,18 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
     HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+    int mostCommon = 0;
+    int maxFrequency = 0;
+
     for (int num : nums) {
       frequencyMap.put(num, frequencyMap.getOrDefault(0, num) + 1);
+      if (frequencyMap.get(num) > maxFrequency) {
+        mostCommon = num;
+        maxFrequency = frequencyMap.get(num);
+      }
     }
 
-    return -1;
+    return mostCommon;
   }
 
   /**
