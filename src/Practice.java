@@ -49,8 +49,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: 0(n)
+   * Space Complexity: 0(n)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -63,7 +63,7 @@ public class Practice {
     int maxFrequency = 0;
 
     for (int num : nums) {
-      frequencyMap.put(num, frequencyMap.getOrDefault(0, num) + 1);
+      frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
       if (frequencyMap.get(num) > maxFrequency) {
         mostCommon = num;
         maxFrequency = frequencyMap.get(num);
