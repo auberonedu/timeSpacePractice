@@ -57,7 +57,17 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    HashMap<Integer, Integer> map = new HashMap<>();
+    if (nums == null) {
+      throw new NullPointerException("Array nums cannot be null.");
+    }
+
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Array nums cannot be empty");
+    }
+    
+    
+    
+    Map<Integer, Integer> map = new HashMap<>();
 
     for (int element : nums) {
       if (map.containsKey(element)) {
@@ -98,6 +108,14 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
+    if (nums == null) {
+      throw new NullPointerException("Array nums cannot be null.");
+    }
+
+    if (nums.length == 0) {
+      throw new IllegalArgumentException("Array nums cannot be empty");
+    }
+    
     int mostFrequent = nums[0];
     int maxFrequency = 0;
 
