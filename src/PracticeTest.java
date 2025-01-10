@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,9 +15,14 @@ public class PracticeTest {
 
   @Test
   public void testFindEvens() {
+    int[] nums = {1, 2, 3, 4, 5, 6};
+    List<Integer> result = Practice.findEvens(nums);
+    assertEquals(List.of(2, 4, 6), result);
 
-
+    int[] noEvens = {1, 3, 5, 7};
+    assertTrue(Practice.findEvens(noEvens).isEmpty());
   }
+
 
   @Test
   public void testSumDiagonal() {
