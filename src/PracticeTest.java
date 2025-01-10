@@ -44,15 +44,56 @@ public class PracticeTest {
     assertEquals(expected, result);
   }
 
+  // Testcases for mostCommonSpaceEfficient
   @Test
-  public void testMostCommonSpaceEfficient() {
+  public void testMostCommonSpaceEfficient_multipleCommon() {
     int[] nums = {1, 2, 2, 3, 1, 1};
     assertEquals(1, Practice.mostCommonSpaceEfficient(nums));
+  }
 
+  @Test
+  public void testMostCommonSpaceEfficient_distinctMajority() {
     int[] nums2 = {4, 4, 4, 5, 5, 6};
     assertEquals(4, Practice.mostCommonSpaceEfficient(nums2));
+  }
 
+  @Test
+  public void testMostCommonSpaceEfficient_singleElement() {
     int[] singleElement = {7};
     assertEquals(7, Practice.mostCommonSpaceEfficient(singleElement));
   }
+
+  // Testcases for mostCommonTimeEfficient
+  @Test
+  public void testMostCommonTimeEfficient_multipleCommon() {
+    int[] nums = {1, 2, 2, 3, 1, 1};
+    assertEquals(1, Practice.mostCommonSpaceEfficient(nums));
+  }
+
+  @Test
+  public void testMostCommonTimeEfficient_distinctMajority() {
+    int[] nums2 = {4, 4, 4, 5, 5, 6};
+    assertEquals(4, Practice.mostCommonSpaceEfficient(nums2));
+  }
+
+  @Test
+  public void testMostCommonTimeEfficient_singleElement() {
+    int[] singleElement = {7};
+    assertEquals(7, Practice.mostCommonSpaceEfficient(singleElement));
+  }
+
 }
+
+
+//   @Test
+//   public void testMostCommonSpaceEfficient() {
+//     int[] nums = {1, 2, 2, 3, 1, 1};
+//     assertEquals(1, Practice.mostCommonSpaceEfficient(nums));
+
+//     int[] nums2 = {4, 4, 4, 5, 5, 6};
+//     assertEquals(4, Practice.mostCommonSpaceEfficient(nums2));
+
+//     int[] singleElement = {7};
+//     assertEquals(7, Practice.mostCommonSpaceEfficient(singleElement));
+//   }
+// }
