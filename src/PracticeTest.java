@@ -31,6 +31,13 @@ public class PracticeTest {
         {7, 8, 9}
     };
     assertEquals(15, Practice.sumDiagonal(matrix));
+
+    int[][] matrix2 = {
+        {10, 20, 30},
+        {40, 50, 60},
+        {70, 80, 90}
+    };
+    assertEquals(150, Practice.sumDiagonal(matrix2));
   }
 
   @Test
