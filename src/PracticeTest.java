@@ -12,8 +12,14 @@ public class PracticeTest {
   // for a refresher!
 
   @Test
-  void mostCommonTimeEfficient(){
-    int[] nums = {0, 1, 1, 2, 3, 4, 5, 6, 7, 8};
+  void mostCommonTimeEfficient() {
+    int[] nums = { 0, 1, 1, 2, 3, 4, 5, 6, 7, 8 };
     assertEquals(1, Practice.mostCommonTimeEfficient(nums));
+  }
+
+  @Test
+  void mostCommonSpaceEfficient() {
+    int[] nums = { 2, 2, 2, 2, 4, 4, 6, 6, 6, 8, 9, 10 };
+    assertEquals(2, Practice.mostCommonSpaceEfficient(nums));
   }
 }

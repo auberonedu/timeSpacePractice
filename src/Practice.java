@@ -61,20 +61,20 @@ public class Practice {
     HashMap<Integer, Integer> frequencies = new HashMap<>();
     int highestCount = 0;
     int mostCommon = 0;
-    for (int i = 0; i < nums.length; i++){
-      if (frequencies.containsKey(nums[i])){
+    for (int i = 0; i < nums.length; i++) {
+      if (frequencies.containsKey(nums[i])) {
         int count = frequencies.get(nums[i]);
         count++;
         frequencies.put(nums[i], count);
       } else {
         frequencies.put(nums[i], 1);
       }
-      if (frequencies.get(nums[i]) >= highestCount){
+      if (frequencies.get(nums[i]) >= highestCount) {
         highestCount = frequencies.get(nums[i]);
         mostCommon = nums[i];
       }
     }
-    
+
     return mostCommon;
   }
 
@@ -96,6 +96,28 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+
+    // HashMap that stores the number without duplicates
+    Map<Integer, Integer> mostCommonMap = new HashMap<>();
+    // Keeps track of the most common number
+    int mostCommonCount = 0;
+    int mostCommonInt = nums[0];
+
+    // Loops over the input array to add each number to the HashMap
+    // Sets each numbers count to 1
+    for (int num : nums) {
+      mostCommonMap.put(num, mostCommonMap.getOrDefault(num, 0));
+
+      // Variable that targets the count, that being the number that represents the
+      // amount of times a number appears in the array
+      int count = mostCommonMap.get(num);
+
+      if (count > mostCommonCount) {
+        mostCommonCount = count;
+        mostCommonInt = num;
+      }
+    }
+
+    return mostCommonInt;
   }
 }
