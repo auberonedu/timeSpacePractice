@@ -7,12 +7,13 @@ public class PracticeTest {
   // TODO: Implement tests for Practice.mostCommonTimeEfficient and Practice.mostCommonSpaceEfficient
   @Test
   public void testMostCommonTimeEfficient() {
-    int[] numList1 = {1, 4, 4, 6, 7, 9, 3};
-    int[] numList2 = {7, 7, 4, 2, 2, 1, 5};
-
-    assertEquals(4, Practice.mostCommonTimeEfficient(numList1));
-    assertEquals(2, Practice.mostCommonTimeEfficient(numList2));
+      int[] numList1 = {1, 4, 4, 6, 7, 9, 3};
+      int[] numList2 = {7, 7, 4, 2, 2, 1, 5};
+  
+      assertEquals(4, Practice.mostCommonTimeEfficient(numList1));
+      assertEquals(7, Practice.mostCommonTimeEfficient(numList2));
   }
+  
 
   @Test
   public void testMostCommonSpaceEfficient() {
