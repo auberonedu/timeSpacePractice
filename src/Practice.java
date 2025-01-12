@@ -28,7 +28,7 @@ public class Practice {
   }
   
 
-  // Time Complexity: O(1)
+  // Time Complexity: O(n)
   // Space Complexity: O(n)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
