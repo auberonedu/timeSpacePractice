@@ -94,17 +94,19 @@ public class Practice {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
     int currentNum = 0;
+    int currentCount = 0;
     int count = 0;
 
     for (int i = 0; i < nums.length; i++) {
-      if (nums[i] == currentNum) {
-        currentCount++;
-      } else if (currentCount > count) {
-          count = currentCount;
-          currentNum = nums[i - 1];
+      currentNum = nums[i];
+      for (int j = 0; j < nums.length; j++) {
+        if (currentNum == nums[j]) {
+          count ++;
         }
-        currentCount = 1;
+        currentCount = count;
       }
-    return currentCount;
+      count = 0;
+    }
+    return currentNum;
   }
 }
