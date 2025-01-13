@@ -60,13 +60,15 @@ public class Practice {
     // in O(n) time. n = nums.size()
     HashMap<Integer, Integer> frequencyMap = new HashMap<>();
 
-    int currentNum = 0;
+    int currentNum = nums[0];
     int count = 0;
 
     for (int num : nums) {
-      //Doing stuff
-      if(currentNum == nums[i]) {
-        count += 1;
+      frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+
+      if(frequencyMap.get(num) > count) {
+        currentNum = num;
+        count = frequencyMap.get(num);
       }
     }
 
