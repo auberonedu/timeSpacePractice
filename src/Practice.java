@@ -95,17 +95,18 @@ public class Practice {
     // in O(1) space.
     int currentNum = 0;
     int currentCount = 0;
-    int count = 0;
-
+    
     for (int i = 0; i < nums.length; i++) {
-      currentNum = nums[i];
+      int count = 0;
       for (int j = 0; j < nums.length; j++) {
-        if (currentNum == nums[j]) {
+        if (nums[i] == nums[j]) {
           count ++;
         }
-        currentCount = count;
       }
-      count = 0;
+      if (count > currentCount) {
+        currentCount = count;
+        currentNum = nums[i];
+      }
     }
     return currentNum;
   }
