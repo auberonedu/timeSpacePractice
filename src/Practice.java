@@ -56,8 +56,7 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonTimeEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(n) time. n = nums.size()
+    int count = 0;
     HashMap<Integer, Integer> map = new HashMap<>();
     for(Integer num : nums){
       if (!map.containsKey(num)){
@@ -66,7 +65,14 @@ public class Practice {
         map.put(num, map.get(num)+1);
       }
     }
-    return -1;
+
+    for(Integer key:map.keySet()){
+      int value = map.get(key);
+      if(value > count){
+        count = value;
+      }
+    }
+    return count;
   }
 
   /**
