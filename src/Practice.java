@@ -58,7 +58,17 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    int currentNum = 0;
+    int count = 0;
+
+    for (int i = 0; i < nums.length; i++) {
+      currentNum = nums[i];
+      if(currentNum == nums[i]) {
+        count += 1;
+      }
+    }
+
+    return currentNum;
   }
 
   /**
