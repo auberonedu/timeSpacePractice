@@ -21,6 +21,17 @@ public class PracticeTest {
   }
 
   @Test
+  void testMostCommonTimeEfficientMultiples() {
+    int[] nums = {1, 2, 2, 2, 3, 3, 3, 4, 5, 5, 6, 7, 8, 9, 10, 10};
+
+    Practice countTest = new Practice();
+
+    int actualCount = countTest.mostCommonTimeEfficient(nums);
+
+    assertEquals(2, 3, actualCount);
+  }
+
+  @Test
   void testMostCommonSpaceEfficient() {
     int[] nums = {1, 2, 2, 2, 3, 3, 3, 3, 4, 5, 5, 6, 7, 8, 9, 10};
 
@@ -30,5 +41,26 @@ public class PracticeTest {
 
     assertEquals(3, actualCount);
   }
+
+  @Test
+  void testMostCommonSpaceEfficientMultiples() {
+    int[] nums = {1, 2, 2, 2, 3, 3, 3, 4, 5, 5, 6, 7, 8, 9, 10, 10};
+
+    Practice countTest = new Practice();
+
+    int actualCount = countTest.mostCommonSpaceEfficient(nums);
+
+    assertEquals(2, 3, actualCount);
+  }
   
+  @Test
+  void testMostCommonTimeEfficientTwoNums() {
+    int[] nums = {1, 2};
+
+    Practice countTest = new Practice();
+
+    int actualCount = countTest.mostCommonTimeEfficient(nums);
+
+    assertEquals(1, 2,  actualCount);
+  }
 }
