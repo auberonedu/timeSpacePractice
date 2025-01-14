@@ -30,6 +30,12 @@ public class PracticeTestTest {
     int[] nums5 = {7, 7, 8, 8};
     int result5 = Practice.mostCommonTimeEfficient(nums5);
     assertTrue(result5 == 7 || result5 == 8);
+
+     // Test Case 6: Simple Test case
+     int[] nums6 = {1, 1, 2, 3, 3, 3};
+    int result6 = Practice.mostCommonTimeEfficient(nums6);
+    assertTrue(result6 == 1 || result6 == 3);
+
   }
 
   @Test
@@ -58,5 +64,10 @@ public class PracticeTestTest {
     int[] nums5 = {7, 7, 8, 8};
     int result5 = Practice.mostCommonSpaceEfficient(nums5);
     assertTrue(result5 == 7 || result5 == 8);
+
+    // Test Case 6: large input with clear majority
+    int[] nums6 = {1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 6, 6};
+    int result6 = Practice.mostCommonSpaceEfficient(nums6);
+    assertEquals(4, result6);
   }
 }
