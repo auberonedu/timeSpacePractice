@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(N)
+  // Space Complexity: O(N)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
     for (int num : array) {
@@ -17,8 +17,8 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity:
-  // Space Complexity: 
+  // Time Complexity: O(N)
+  // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: 
-  // Space Complexity: 
+  // Time Complexity: O(N)
+  // Space Complexity: O(N)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
@@ -56,9 +56,26 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonTimeEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(n) time. n = nums.size()
-    return -1;
+    int count = 0;
+    int common = 0;
+
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for(Integer num : nums){
+      if (!map.containsKey(num)){
+      map.put(num, 1);}
+      else{
+        map.put(num, map.get(num)+1);
+      }
+    }
+
+    for(Integer key:map.keySet()){
+      int value = map.get(key);
+      if(value > count){
+        count = value;
+        common = key;
+      }
+    }
+    return common;
   }
 
   /**
@@ -77,8 +94,19 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(1) space.
-    return -1;
+      int count =0;
+      int common =0;
+
+      for(int i=0; i<nums.length;i++){
+        if(count ==0){
+          common = nums[i];
+          count = 1;
+        } else if(nums[i] == common){
+          count++;
+        } else{
+          count--;
+        }
+      }
+    return common;
   }
 }
