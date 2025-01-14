@@ -58,7 +58,7 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     int count = 0;
     int common = 0;
-    
+
     HashMap<Integer, Integer> map = new HashMap<>();
     for(Integer num : nums){
       if (!map.containsKey(num)){
@@ -94,8 +94,19 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(1) space.
-    return -1;
+      int count =0;
+      int common =0;
+
+      for(int i=0; i<nums.length;i++){
+        if(count ==0){
+          common = nums[i];
+          count = 1;
+        } else if(nums[i] == common){
+          count++;
+        } else{
+          count--;
+        }
+      }
+    return common;
   }
 }
