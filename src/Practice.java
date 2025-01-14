@@ -57,6 +57,8 @@ public class Practice {
    */
   public static int mostCommonTimeEfficient(int[] nums) {
     int count = 0;
+    int common = 0;
+    
     HashMap<Integer, Integer> map = new HashMap<>();
     for(Integer num : nums){
       if (!map.containsKey(num)){
@@ -70,9 +72,10 @@ public class Practice {
       int value = map.get(key);
       if(value > count){
         count = value;
+        common = key;
       }
     }
-    return count;
+    return common;
   }
 
   /**
