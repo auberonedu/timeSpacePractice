@@ -49,8 +49,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(n), but is really the cardinality of the set of unique integers.
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -58,7 +58,15 @@ public class Practice {
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(n) time. n = nums.size()
-    return -1;
+    int max = 0;
+    Map<Integer, Integer> freqs = new HashMap<Integer, Integer>();
+    for(Integer i : nums) {
+      freqs.put(i, freqs.getOrDefault(i, 0) + 1);
+      if(freqs.get(i) > max) {
+        max = i;
+      }
+    }
+    return max;
   }
 
   /**
@@ -79,6 +87,20 @@ public class Practice {
   public static int mostCommonSpaceEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
     // in O(1) space.
-    return -1;
+    int max = 0;
+    int max_freq = 0;
+    for(int i = 0; i < nums.length; i++) {
+      int ctr = 0;
+      for(int j = 0; j < nums.length; j++) {
+        if(nums[i] == nums[j]) {
+          ctr++;
+        }
+      }
+      if(ctr > max_freq) {
+        max_freq = ctr;
+        max = nums[i];
+      }
+    }
+    return max;
   }
 }
